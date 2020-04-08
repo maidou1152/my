@@ -8,6 +8,8 @@ import org.springframework.web.filter.CorsFilter;
 
 /**
  * 跨域配置类
+ * 
+ * 
  * @author asus
  *
  */
