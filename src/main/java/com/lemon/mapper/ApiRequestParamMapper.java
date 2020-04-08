@@ -18,6 +18,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface ApiRequestParamMapper extends BaseMapper<ApiRequestParam> {
 
+	//根据apiId查询api的请求参数
 	@Select("select * from api_request_param where api_id=#{apiId}")
 	public List<ApiRequestParam> findAll(Integer apiId);
 	

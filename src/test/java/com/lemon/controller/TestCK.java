@@ -45,20 +45,17 @@ public class TestCK {
 		.andExpect(status().isOk())
 		.andReturn().getResponse().getContentAsString();
 		System.out.println(resultJson);
-		
 		sessionId=(String) JSONPath.read(resultJson,"$.message");
 	}
 	
-	//用户验重  get
-
+	//用户验重  gets
 	@Test
-	public void f1() throws Exception {
+	public void find() throws Exception {
 		mockmvc.perform(MockMvcRequestBuilders.get("/user/find")
 			   .header("Authorization", sessionId)
 			   .param("username","20@qq.com"))
 			   .andDo(print())
 			   .andExpect(MockMvcResultMatchers.jsonPath("$.message").value("用户账号已存在"))
 			   .andReturn();
-				
 	}
 }

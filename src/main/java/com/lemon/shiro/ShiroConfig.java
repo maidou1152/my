@@ -17,6 +17,8 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class ShiroConfig {
+	
+	// 使用@Bean 注解表明shiroFilter需要交给Spring进行管理
 	@Bean
 	public ShiroFilterFactoryBean shiroFilter(SecurityManager securityManager) {
 
