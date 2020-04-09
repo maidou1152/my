@@ -11,6 +11,11 @@
   <groupId>com.lemon</groupId>
   <artifactId>cktest_2</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+        <maven-jar-plugin.version>2.6</maven-jar-plugin.version>
+  </properties>
+  
   <dependencies>
   		<!--Spring Boot的核心启动器  -->
   		<!--web的场景，自动帮我们引入了web模块开发需要的相关jar包  -->
@@ -55,7 +60,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.10</version>
+			
 		</dependency>
 		<!-- swagger -->
 		<dependency>
@@ -77,8 +82,7 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>3.4</version>
-		</dependency>
+			</dependency>
 		<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
 		<dependency>
     		<groupId>com.alibaba</groupId>
@@ -86,4 +90,5 @@
    		    <version>1.2.58</version>
 		</dependency>	
   </dependencies>  
+  
 </project>
