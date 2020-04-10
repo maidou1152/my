@@ -1,4 +1,4 @@
-﻿package com.lemon.generator;
+package com.lemon.generator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +26,7 @@ public class CodeGenerator {
 public static void main(String[] args) {
         // 代码生成器
         AutoGenerator mpg = new AutoGenerator();
+
 
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
