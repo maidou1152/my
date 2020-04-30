@@ -110,12 +110,15 @@ public class ApiServiceImpl extends ServiceImpl<ApiMapper, Api> implements ApiSe
 				response=restTemplate.exchange(url,HttpMethod.POST,httpEntity,String.class);
 			}
 		}
-		apiRunResult.setStatusCode(response.getStatusCodeValue()+"");
-		HttpHeaders headersResult=response.getHeaders();
+		HttpHeaders headersResult;
+		if(response!=null){
+			apiRunResult.setStatusCode(response.getStatusCodeValue()+"");
+			headersResult=response.getHeaders();
 		//将java转json
 		//apiRunResult.setHeaders(new ObjectMapper().writeValueAsString(headersResult));
 		apiRunResult.setHeaders(JSON.toJSONString(headersResult));
 		apiRunResult.setBody(response.getBody().toString());
+		}
 		}
 		catch(HttpStatusCodeException e){
 			//注意此时有异常调用情况  往往没有体
