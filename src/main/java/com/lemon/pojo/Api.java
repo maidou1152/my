@@ -5,6 +5,9 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 
 import java.util.Date;
+
+import javax.validation.constraints.NotNull;
+
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
@@ -37,6 +40,7 @@ public class Api implements Serializable {
     private Integer apiClassificationId;
 
     @ApiModelProperty(value = "接口名称")
+    @NotNull(message="接口名称不能为空")
     private String name;
 
     @ApiModelProperty(value = "接口请求方法")

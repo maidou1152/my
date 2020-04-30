@@ -5,6 +5,9 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 
 import java.util.Date;
+
+import javax.validation.constraints.NotNull;
+
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
@@ -34,9 +37,11 @@ public class User implements Serializable {
     private Integer id;
 
     @ApiModelProperty(value = "用户名")
+    @NotNull(message="用户名不能为空")
     private String username;
 
     @ApiModelProperty(value = "密码")
+    @NotNull(message="密码不能为空")
     private String password;
 
     @ApiModelProperty(value = "注册时间")

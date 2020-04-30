@@ -17,6 +17,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.lemon.common.Result;
 import com.lemon.pojo.User;
 import com.lemon.service.UserService;
+import com.lemon.util.LogerUtil;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -88,9 +89,9 @@ public class UserController {
 				}else{
 					result=new Result("0","密码不正确");
 				}
-				e.printStackTrace();
-			}
-			
+				//e.printStackTrace();
+				LogerUtil.log(UserController.class,"用户控制层异常",e);
+			}		
 			return result;
 }
 		

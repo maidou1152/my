@@ -52,8 +52,8 @@ public class IsNullUtil {
         try {
             boolean allFieldNull = IsNullUtil.isAllFieldNull(user);
             System.out.println(allFieldNull);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            LogerUtil.log(IsNullUtil.class, "非法数据", e);
         }
     }
 }

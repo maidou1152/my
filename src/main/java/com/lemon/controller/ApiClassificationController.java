@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -86,6 +87,17 @@ public class ApiClassificationController {
 	}
 	
 	//更新分类名称
+	
+	@PutMapping("/{apiclassificationId}")
+	@ApiOperation(value="更新分类名称",httpMethod="PUT")
+	public Result updateById(@PathVariable("apiclassificationId") Integer apiclassificationId,ApiClassification apiClassification){
+		Result result=null;
+		//调用业务层方法：插入到数据库中，统一处理异常
+		apiClassification.setId(apiclassificationId);
+		apiClassificationService.updateById(apiClassification);
+		result=new Result("1",apiClassification,"更新项目");
+		return result;
+	}
 	
 	//删除分类
 	@DeleteMapping("/{apiclassificationId}")
